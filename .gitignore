@@ -3,3 +3,7 @@
 
 # ログファイル
 /logs
+
+# 永続化ファイル
+/.data/
+!/.data/.gitkeep

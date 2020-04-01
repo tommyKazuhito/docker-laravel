@@ -15,6 +15,9 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 
 RUN apk update && \
+  apk add --update \
+    nodejs \
+    npm && \
   apk add --update --no-cache --virtual=.build-dependencies \
     autoconf=~2.69 \
     gcc=~9.2 \

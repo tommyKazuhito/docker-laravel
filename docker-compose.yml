@@ -8,8 +8,10 @@ services:
       - ${PROJECT_PATH:-./src}:/var/www/html
       - ./logs/nginx:/var/log/nginx
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/cert-key:/etc/nginx/ssl
     ports:
       - ${WEB_PORT:-10080}:80
+      - ${SSL_PORT:-10443}:443
   app:
     build:
       context: ./docker/php

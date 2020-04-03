@@ -1,0 +1,15 @@
+PROJECT_PATH=./src
+
+APP_PORT=18000
+
+WEB_PORT=10080
+SSL_PORT=10443
+
+DB_NAME=docker_laravel
+DB_USER=docker_laravel
+DB_PASS=test
+DB_PORT=13306
+
+PMA_PORT=50080
+
+TZ=Asia/Tokyo

@@ -43,7 +43,7 @@ sh .sh/setup-local.sh
 cd docker/nginx/cert-key
 brew install mkcert # mkcertが未インストールの場合
 mkcert -install # mkcertが未インストールの場合
-mkcert -cert-file ./localhost.crt.pem -key-file ./localhost.key.pem localhost local.laravel ${WEB_DOMAIN}
+mkcert -cert-file ./localhost.crt.pem -key-file ./localhost.key.pem localhost local.laravel local.docker-laravel ${WEB_DOMAIN}
 ```
 
 ### 3. dockerアプリケーションの起動

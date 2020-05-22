@@ -2,7 +2,7 @@ PROJECT_PATH=./src
 
 APP_PORT=18000
 
-WEB_DOMAIN=local.amediar.jp
+WEB_DOMAIN=local.docker-laravel
 WEB_PORT=10080
 SSL_PORT=10443
 

@@ -35,7 +35,18 @@ sh .sh/setup-local.sh
 
 ※今後`.sh/conf/.local-env`が更新した際は、上記スクリプトを再実行してください。
 
-### 2. dockerアプリケーションの起動
+### 2. 開発環境用の証明書発行
+
+開発環境用の自己証明書を発行してください
+
+``` bash
+cd docker/nginx/cert-key
+brew install mkcert # mkcertが未インストールの場合
+mkcert -install # mkcertが未インストールの場合
+mkcert -cert-file ./localhost.crt.pem -key-file ./localhost.key.pem localhost local.laravel ${WEB_DOMAIN}
+```
+
+### 3. dockerアプリケーションの起動
 
 ```bash
 $ docker-compose up -d
@@ -45,7 +56,7 @@ Recreating docker_laravel_phpmyadmin_1 ... done
 Recreating docker_laravel_web_1        ... done
 ```
 
-### 3. Laravelのインストール
+### 4. Laravelのインストール
 
 #### 1. appコンテナにチェックアウト
 
@@ -85,6 +96,6 @@ DB_PASSWORD=test
 $ php artisan migrate
 ```
 
-### 4. 動作確認
+### 5. 動作確認
 
-[https://localhost:${SSL_PORT}](https://localhost:${SSL_PORT})にアクセスしてページが表示されればOKです。
+[https://${WEB_DOMAIN}:${SSL_PORT}](https://${WEB_DOMAIN}:${SSL_PORT})にアクセスしてページが表示されればOKです。

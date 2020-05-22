@@ -1,6 +1,10 @@
 # 環境設定ファイル
 .env
 
+# SSL証明書
+/docker/nginx/cert-key/
+!/docker/nginx/cert-key/.gitkeep
+
 # ログファイル
 /logs
 

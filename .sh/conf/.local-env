@@ -2,15 +2,29 @@ PROJECT_PATH=./src
 
 APP_PORT=18000
 
-WEB_DOMAIN=local.docker-laravel
+# nginx settings
+WEB_DOMAIN=local.laravel
 WEB_PORT=10080
 SSL_PORT=10443
 
+# MySQL settings
 DB_NAME=docker_laravel
 DB_USER=docker_laravel
 DB_PASS=test
 DB_PORT=13306
 
+# phpMyAdmin settings
 PMA_PORT=50080
 
+# app settings
 TZ=Asia/Tokyo
+
+# MinIO settings
+MINIO_PORT=9009
+
+AWS_URL=http://minio:9000
+AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY=YYYYYYYYYYYYYYYYYYYY
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=laravel
+AWS_PATH_STYLE_ENDPOINT=true

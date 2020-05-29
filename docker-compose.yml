@@ -57,3 +57,13 @@ services:
       - PMA_PASSWORD=${DB_PASS:-secret}
     ports:
       - ${PMA_PORT:-8008}:80
+  minio:
+    image: minio/minio
+    ports:
+      - ${MINIO_PORT:-9000}:9000
+    volumes:
+      - ./.data/minio:/export
+    environment:
+      MINIO_ACCESS_KEY: ${AWS_ACCESS_KEY_ID}
+      MINIO_SECRET_KEY: ${AWS_SECRET_ACCESS_KEY}
+    command: server /export
